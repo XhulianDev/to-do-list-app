@@ -9,6 +9,10 @@ function addTask() {
   }
   let listItem = document.createElement("li");
   listItem.textContent = inputValue;
+  const removeTask = document.createElement("span");
+  removeTask.className = "delete-button";
+  removeTask.textContent = 'X';
+  listItem.appendChild(removeTask);
   ul.appendChild(listItem);
   inputElement.value = '';
 }
@@ -24,5 +28,8 @@ inputElement.addEventListener("keydown", (event) => {
 ul.addEventListener("click", (event) => {
   if (event.target.tagName === "LI") {
     event.target.classList.toggle("completed");
+  } else if (event.target.className === "delete-button") {
+    let li = event.target.parentNode;
+    li.remove();
   }
 });
