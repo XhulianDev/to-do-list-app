@@ -21,4 +21,8 @@ inputElement.addEventListener("keydown", (event) => {
   }
 });
 
-
+ul.addEventListener("click", (event) => {
+  if (event.target.tagName === "LI") {
+    event.target.classList.toggle("completed");
+  }
+});
