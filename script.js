@@ -1,5 +1,6 @@
 let inputElement = document.getElementById("input");
 const addButton = document.getElementById("add-task-button");
+const removeAll = document.getElementById("clear-completed-button");
 let ul = document.getElementById("list");
 
 function addTask() {
@@ -32,4 +33,11 @@ ul.addEventListener("click", (event) => {
     let li = event.target.parentNode;
     li.remove();
   }
+});
+
+removeAll.addEventListener("click", () => {
+  const completedTasks = document.querySelectorAll("li.completed");
+  completedTasks.forEach((task) => {
+    task.remove();
+  });
 });
