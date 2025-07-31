@@ -11,8 +11,8 @@ body {
 }
 
 main {
-  margin: 1.25rem auto;
-  width: 25rem;
+  margin: 2.25rem auto;
+  max-width: 25rem;
   background-color: #f4f4f4;
   padding: 1.5rem;
   border-radius: 8px;
@@ -74,6 +74,7 @@ ul li {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: 10px;
   cursor: pointer;
   word-break: break-word;
   transition: background-color 0.2s ease;
@@ -89,4 +90,8 @@ ul li:hover {
   background-color: #e9ecef;
 }
 
-
+@media (max-width: 300px) {
+  .delete-button: {
+    margin-left: 20px;
+  }
+}
